@@ -122,50 +122,12 @@ body {
   position: relative;
   padding-top: 52px;
   margin-bottom: 30px;
-}
-
-.wordmark {
-  margin: 0;
-  font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-  font-size: clamp(50px, 15.5vw, 104px);
-  line-height: 0.92;
-  letter-spacing: -0.035em;
-  color: var(--maroon);
   text-align: center;
-  -webkit-text-stroke: clamp(7px, 1.9vw, 13px) var(--white);
-  paint-order: stroke fill;
-  text-shadow: 0 5px 0 rgba(0, 0, 0, 0.13);
 }
 
-.wordmark .lower { text-transform: lowercase; }
-
-.jet {
-  position: absolute;
-  top: 0;
-  left: 56%;
-  width: clamp(58px, 15vw, 96px);
-  fill: var(--maroon);
-  stroke: var(--white);
-  stroke-width: 7;
-  paint-order: stroke fill;
-  z-index: 2;
-}
-
-.trail {
-  position: absolute;
-  top: 16px;
-  left: 1%;
-  width: 62%;
-  fill: none;
-  z-index: 1;
-}
-
-.trail path {
-  stroke: var(--white);
-  stroke-width: 9;
-  stroke-linecap: round;
+.wordmark-logo {
+  width: min(92%, 640px);
+  height: auto;
 }
 
 /* ---------- TAGLINE ---------- */
