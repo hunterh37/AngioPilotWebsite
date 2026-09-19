@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AngioPilot — Scenario-Based Vascular Catheterization Simulation Training Tool</title>
 <meta name="description" content="AngioPilot — Scenario-Based Vascular Catheterization Simulation Training Tool. Departure: Femoral Artery. Arrival: Splenic Artery.">
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
 
@@ -95,7 +95,7 @@
 
   <!-- BOTTOM MAROON BAR -->
   <div class="bar bottom">
-    <img class="footer-logo" src="{{ '/assets/img/medvr-logo.png' | relative_url }}" alt="MedVR">
+    <img class="footer-logo" src="{{ '/assets/img/medvr-logo.png' | relative_url }}?v={{ site.time | date: '%s' }}" alt="MedVR">
   </div>
 
 </main>
