@@ -5,38 +5,94 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AngioPilot — Vascular Catheterization Simulation</title>
-<meta name="description" content="Scenario-Based Vascular Catheterization Simulation Training Tool.">
+<title>AngioPilot — visionOS Vascular Catheterization Simulation</title>
+<meta name="description" content="AngioPilot is a scenario-based vascular catheterization simulation training tool for Apple Vision Pro. Depart Femoral Artery, arrive Splenic Artery.">
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-<div class="bar top"></div>
+<div class="bar top" role="presentation"></div>
 
-<main class="wrap">
-<section class="ticket" aria-label="AngioPilot overview">
+<header class="wrap">
+<section class="ticket" aria-label="AngioPilot boarding pass">
 <div class="ticket-main">
-<p class="logo">ANGIO<span>PILOT</span></p>
-<p class="tag">Vascular catheterization simulation.</p>
+<p class="wordmark">AngioPilot</p>
+<p class="subtitle">Scenario-Based Vascular Catheterization<br>Simulation Training Tool for visionOS</p>
 <div class="route">
 <div class="stop">
-<span class="k">Femoral</span>
-<span class="v">Departure</span>
+<span class="stop-label">Departure</span>
+<span class="stop-value">Femoral Artery</span>
 </div>
-<span class="arrow" aria-hidden="true">&rarr;</span>
+<svg class="route-line" viewBox="0 0 120 24" aria-hidden="true"><line x1="4" y1="12" x2="96" y2="12"/><path d="M96 6 L112 12 L96 18 Z"/></svg>
 <div class="stop">
-<span class="k">Splenic</span>
-<span class="v">Arrival</span>
+<span class="stop-label">Arrival</span>
+<span class="stop-value">Splenic Artery</span>
 </div>
 </div>
+<p class="platform">Built for Apple Vision Pro &middot; Spatial catheter, wire &amp; contrast simulation</p>
 </div>
 <div class="stub">
-<p class="ready">Ready for takeoff?</p>
-<a class="btn" href="mailto:demo@angiopilot.example?subject=Book%20Demo">Book demo</a>
+<p class="ready">Ready for<br>takeoff?</p>
+<div class="qr" role="img" aria-label="QR code placeholder for demo booking">
+<svg viewBox="0 0 100 100" aria-hidden="true">
+<rect x="6" y="6" width="24" height="24"/><rect x="70" y="6" width="24" height="24"/><rect x="6" y="70" width="24" height="24"/>
+<rect x="12" y="12" width="12" height="12" class="qr-inv"/><rect x="76" y="12" width="12" height="12" class="qr-inv"/><rect x="12" y="76" width="12" height="12" class="qr-inv"/>
+<g><rect x="40" y="10" width="6" height="6"/><rect x="50" y="10" width="6" height="6"/><rect x="40" y="22" width="6" height="6"/><rect x="58" y="18" width="6" height="6"/><rect x="40" y="40" width="6" height="6"/><rect x="52" y="44" width="6" height="6"/><rect x="64" y="40" width="6" height="6"/><rect x="76" y="44" width="6" height="6"/><rect x="40" y="58" width="6" height="6"/><rect x="58" y="62" width="6" height="6"/><rect x="70" y="70" width="6" height="6"/><rect x="82" y="70" width="6" height="6"/><rect x="40" y="76" width="6" height="6"/><rect x="52" y="82" width="6" height="6"/><rect x="64" y="84" width="6" height="6"/></g>
+<path d="M38 52 L62 52 L58 56 L54 55 L52 60 L49 55 L42 56 Z" class="qr-plane"/>
+</svg>
+</div>
+<a class="btn" href="mailto:demo@angiopilot.example?subject=AngioPilot%20Demo">Book demo</a>
 </div>
 </section>
-<p class="foot">Take your skills further.</p>
+</header>
+
+<main class="wrap">
+<section class="block">
+<h1>Fly the vasculature.</h1>
+<p>AngioPilot is a visionOS medical simulation of vascular catheterization surgery. Trainees pilot catheter and wire from access to target in full spatial 3D, with scenario branching, contrast runs, and complication drills.</p>
+<ul class="facts">
+<li><strong>Access:</strong> Femoral artery puncture, sheath placement, hemostasis</li>
+<li><strong>Navigation:</strong> Aortic arch, celiac trunk, splenic artery selection</li>
+<li><strong>Judgment:</strong> Contrast dose, wire choice, bailout decisions scored per run</li>
+</ul>
+</section>
+
+<section class="block split">
+<div>
+<h2>How a run works</h2>
+<ol class="steps">
+<li><strong>Brief.</strong> Indication, imaging, kit check.</li>
+<li><strong>Access.</strong> Ultrasound-guided stick in spatial view.</li>
+<li><strong>Navigate.</strong> Wire ahead, catheter follow, roadmapping.</li>
+<li><strong>Treat &amp; close.</strong> Target run, assessment, debrief score.</li>
+</ol>
+</div>
+<div class="window-badge" aria-label="AngioPilot window badge">
+<span>AngioPilot</span>
+</div>
+</section>
+
+<section class="block">
+<h2>Field kit</h2>
+<dl class="kit">
+<dt>4&times;2 in. sticker sheet</dt><dd>Boarding-pass rectangular sticker from the design sheet.</dd>
+<dt>Window badge</dt><dd>Maroon cabin-window mark with white wordmark.</dd>
+<dt>3D keychain</dt><dd>Light-blue roundel, maroon ring, low-poly jet.</dd>
+</dl>
+</section>
+
+<section class="block specs">
+<h2>Spec sheet</h2>
+<table>
+<tr><th>Platform</th><td>Apple Vision Pro (visionOS)</td></tr>
+<tr><th>Colors</th><td><span class="sw" style="background:#b0cae8"></span>#b0cae8 &middot; <span class="sw" style="background:#8f2926"></span>#8f2926</td></tr>
+<tr><th>Type</th><td>SF Pro &middot; Good Times (display)</td></tr>
+<tr><th>Contact</th><td><a href="mailto:demo@angiopilot.example?subject=AngioPilot%20Demo">demo@angiopilot.example</a></td></tr>
+</table>
+</section>
+
+<p class="cta-row"><a class="btn" href="mailto:demo@angiopilot.example?subject=AngioPilot%20Demo">Book a demo</a></p>
 </main>
 
-<div class="bar bottom"></div>
+<footer class="bar bottom"><span>Take your skills further &middot; Book demo</span></footer>
 </body>
 </html>
