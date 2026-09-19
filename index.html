@@ -11,6 +11,35 @@
 </head>
 <body>
 
+<!-- ================= SPLASH: AIRPLANE WINDOW ================= -->
+<div class="splash" id="splash" role="presentation">
+  <div class="splash-sky" aria-hidden="true"></div>
+
+  <div class="porthole" aria-hidden="true">
+    <div class="porthole-frame">
+      <div class="porthole-pane">
+
+        <div class="pane-view">
+          <div class="pane-mark">
+            <svg class="pane-trail" viewBox="0 0 700 60"><path d="M8 50 C 180 46, 400 30, 690 8"/></svg>
+            <svg class="pane-jet" viewBox="0 0 120 120">
+              <path d="M112 44 L74 36 L44 8 L34 8 L48 40 L24 40 L14 26 L6 26 L12 48 L6 70 L14 70 L24 56 L48 56 L34 88 L44 88 L74 60 L112 52 C118 51 118 45 112 44 Z"/>
+            </svg>
+            <span class="pane-word">A<span class="lower">ngio</span>P<span class="lower">ilot</span></span>
+          </div>
+        </div>
+
+        <div class="shade">
+          <span class="shade-grip"></span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <button class="splash-skip" id="splashSkip" type="button">Skip</button>
+</div>
+
 <main class="ticket">
 
   <!-- TOP MAROON BAR -->
@@ -22,6 +51,20 @@
       <a href="#demo">Book Demo</a>
     </nav>
   </header>
+
+  <!-- NEXT EVENT -->
+  <section class="next-event" aria-label="Next event">
+    <div class="event-card">
+      <span class="event-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2V2zm12 8H5v10h14V10zM7 12h4v4H7v-4z"/></svg>
+      </span>
+      <span class="event-text">
+        <span class="event-label">Next Event</span>
+        <span class="event-value">September 22nd &middot; 10AM &ndash; 4PM</span>
+        <span class="event-place">Placeholder Abc</span>
+      </span>
+    </div>
+  </section>
 
   <!-- MAIN PANEL -->
   <section class="panel" id="top">
@@ -95,11 +138,61 @@
 
   <!-- BOTTOM MAROON BAR -->
   <div class="bar bottom">
-    <img class="footer-logo" src="{{ '/assets/img/medvr-logo.png' | relative_url }}?v={{ site.time | date: '%s' }}" alt="MedVR">
+    <a class="footer-logo-link" href="https://medvr.io/" target="_blank" rel="noopener">
+      <span class="footer-logo-caption">in partnership with</span>
+      <img class="footer-logo" src="{{ '/assets/img/medvr-logo.png' | relative_url }}?v={{ site.time | date: '%s' }}" alt="MedVR">
+    </a>
   </div>
 
 </main>
 
+
+<script>
+(function () {
+  var splash = document.getElementById('splash');
+  if (!splash) return;
+  var root = document.documentElement;
+  var skip = document.getElementById('splashSkip');
+  var done = false;
+  var timers = [];
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seen = false;
+  try { seen = sessionStorage.getItem('apSplashSeen') === '1'; } catch (e) {}
+
+  function finish() {
+    if (done) return;
+    done = true;
+    timers.forEach(clearTimeout);
+    root.classList.remove('splash-lock');
+    splash.classList.add('is-gone');
+    try { sessionStorage.setItem('apSplashSeen', '1'); } catch (e) {}
+    setTimeout(function () { splash.remove(); }, 700);
+  }
+
+  function bail() {
+    root.classList.remove('splash-lock');
+    splash.remove();
+  }
+
+  if (reduced || seen) { bail(); return; }
+
+  root.classList.add('splash-lock');
+  splash.classList.add('is-running');
+
+  timers.push(setTimeout(function () { splash.classList.add('is-open'); }, 900));
+  timers.push(setTimeout(function () { splash.classList.add('is-flying'); }, 2650));
+  timers.push(setTimeout(finish, 3650));
+
+  skip.addEventListener('click', finish);
+  splash.addEventListener('click', finish);
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') finish();
+  });
+  window.addEventListener('wheel', finish, { passive: true, once: true });
+  window.addEventListener('touchmove', finish, { passive: true, once: true });
+})();
+</script>
 
 </body>
 </html>
