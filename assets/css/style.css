@@ -8,13 +8,14 @@
   --paper: #ffffff;
   --pass-w: 880px;
   --radius: 26px;
+  --page: #b0cae8;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   padding: 32px 20px 56px;
-  background: #e9eff7;
+  background: var(--page);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -28,7 +29,7 @@ body {
   background: var(--sky);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 24px 60px rgba(34, 49, 74, 0.22);
+  box-shadow: 0 18px 44px rgba(34, 49, 74, 0.14);
 }
 
 /* maroon end caps */
@@ -59,8 +60,8 @@ body {
 /* side notches at each perforation — scale with the pass width */
 .seg + .seg {
   background-image:
-    radial-gradient(circle 15px at 0 0, #e9eff7 98%, transparent 100%),
-    radial-gradient(circle 15px at 100% 0, #e9eff7 98%, transparent 100%);
+    radial-gradient(circle 15px at 0 0, var(--page) 98%, transparent 100%),
+    radial-gradient(circle 15px at 100% 0, var(--page) 98%, transparent 100%);
   background-repeat: no-repeat;
   background-position: left top, right top;
 }
@@ -240,6 +241,16 @@ body {
   border-radius: 10px;
 }
 .btn:hover { background: var(--maroon-dk); }
+.by {
+  margin: 26px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.85;
+}
+.by .brand-logo { height: 22px; width: auto; vertical-align: -6px; margin: 0 4px; }
 
 @media (max-width: 760px) {
   body { padding: 16px 12px 36px; }

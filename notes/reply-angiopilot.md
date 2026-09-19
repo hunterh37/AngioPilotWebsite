@@ -22,5 +22,5 @@ Copied to `assets/img/medvr-logo.png`, wired into maroon footer with `alt="MedVR
 ## Maroon page background
 Body now `#8f2926` with white text; ticket/stops/QR stay light for contrast; headings white; spec dividers translucent white. Uncommitted.
 
-## Next
-Review diff, then commit + push to `main` to deploy via Pages.
+## Deploy Sep 19
+Pushed `5ac9ba7` (local commit "continued", pre-existing, not authored here) to `origin/main`. Pages status: built. Note: that commit also publishes `notes/reply-angiopilot.md` on the site; move notes under `_excluded` or add to front-matter exclude if unwanted.
