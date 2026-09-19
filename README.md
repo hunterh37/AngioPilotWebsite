@@ -2,7 +2,7 @@
 
 Scenario-Based Vascular Catheterization Simulation Training Tool.
 
-Live site: https://hunterh37.github.io/AngioPilot
+Live site: https://angiopilot.org
 
 ## Local preview
 

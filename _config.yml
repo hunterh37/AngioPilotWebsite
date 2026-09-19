@@ -1,7 +1,7 @@
 title: AngioPilot
 description: "Scenario-Based Vascular Catheterization Simulation Training Tool"
-url: "https://hunterh37.github.io"
-baseurl: "/AngioPilotWebsite"
+url: "https://angiopilot.org"
+baseurl: ""
 markdown: kramdown
 plugins:
   - jekyll-feed
