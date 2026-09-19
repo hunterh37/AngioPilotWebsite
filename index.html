@@ -157,8 +157,6 @@
   var timers = [];
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var seen = false;
-  try { seen = sessionStorage.getItem('apSplashSeen') === '1'; } catch (e) {}
 
   function finish() {
     if (done) return;
@@ -166,7 +164,6 @@
     timers.forEach(clearTimeout);
     root.classList.remove('splash-lock');
     splash.classList.add('is-gone');
-    try { sessionStorage.setItem('apSplashSeen', '1'); } catch (e) {}
     setTimeout(function () { splash.remove(); }, 700);
   }
 
@@ -175,7 +172,7 @@
     splash.remove();
   }
 
-  if (reduced || seen) { bail(); return; }
+  if (reduced) { bail(); return; }
 
   root.classList.add('splash-lock');
   splash.classList.add('is-running');
