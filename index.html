@@ -52,7 +52,7 @@
       <a href="#overview">Overview</a>
       <a href="#screenshots">Screenshots</a>
       <a href="#video">Video</a>
-      <a href="https://calendly.com/jason-medvr/30min" target="_blank" rel="noopener">Book Demo</a>
+      <a href="#book">Book Demo</a>
       <a href="#contact">Contact Us</a>
     </nav>
   </header>
@@ -85,7 +85,7 @@
     <p class="tagline">Scenario-Based Vascular Catheterization<br>Simulation Training Tool</p>
 
 
-    <a class="btn" id="demo" href="https://calendly.com/jason-medvr/30min" target="_blank" rel="noopener">Book Demo</a>
+    <a class="btn" id="demo" href="#book">Book Demo</a>
 
   </section>
 
@@ -118,6 +118,30 @@
     <h2 class="section-title">Video</h2>
     <p class="section-body">Walkthrough of a complete run, departure to arrival.</p>
     <div class="video"><iframe src="https://www.youtube.com/embed/osTspEApYeU" title="VascCath walkthrough" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe></div>
+  </section>
+
+
+  <!-- BOOK DEMO -->
+  <section class="panel section" id="book">
+    <h2 class="section-title">Book Demo</h2>
+    <p class="section-body">Two boarding days only &mdash; Tuesday, September 22nd and Wednesday, September 23rd, 2026. Pick a day, then pick a time.</p>
+
+    <div class="date-tabs" role="tablist" aria-label="Demo dates">
+      <button class="date-tab is-active" type="button" role="tab" aria-selected="true" data-date="2026-09-22">
+        <span class="date-dow">Tue</span>
+        <span class="date-day">Sep 22</span>
+      </button>
+      <button class="date-tab" type="button" role="tab" aria-selected="false" data-date="2026-09-23">
+        <span class="date-dow">Wed</span>
+        <span class="date-day">Sep 23</span>
+      </button>
+    </div>
+
+    <div class="calendly-wrap" id="calendly-wrap"></div>
+
+    <noscript>
+      <a class="btn" href="https://calendly.com/jason-medvr/30min?month=2026-09&amp;date=2026-09-22" target="_blank" rel="noopener">Open the scheduler</a>
+    </noscript>
   </section>
 
   <!-- CONTACT -->
@@ -220,6 +244,54 @@
   window.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && box.classList.contains('is-open')) close();
   });
+})();
+</script>
+
+<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+(function () {
+  var CALENDLY_URL = 'https://calendly.com/jason-medvr/30min';
+  var wrap = document.getElementById('calendly-wrap');
+  var tabs = document.querySelectorAll('.date-tab');
+  if (!wrap || !tabs.length) return;
+
+  function urlFor(date) {
+    return CALENDLY_URL +
+      '?month=' + date.slice(0, 7) +
+      '&date=' + date +
+      '&hide_gdpr_banner=1' +
+      '&background_color=ffffff' +
+      '&text_color=2E3E62' +
+      '&primary_color=8C362D';
+  }
+
+  function render(date) {
+    wrap.innerHTML = '';
+    window.Calendly.initInlineWidget({ url: urlFor(date), parentElement: wrap });
+  }
+
+  function select(tab) {
+    Array.prototype.forEach.call(tabs, function (t) {
+      var on = t === tab;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    render(tab.getAttribute('data-date'));
+  }
+
+  Array.prototype.forEach.call(tabs, function (t) {
+    t.addEventListener('click', function () { select(t); });
+  });
+
+  // widget.js is async, so wait for it before the first render
+  (function ready() {
+    if (window.Calendly && window.Calendly.initInlineWidget) {
+      render(document.querySelector('.date-tab.is-active').getAttribute('data-date'));
+    } else {
+      setTimeout(ready, 100);
+    }
+  })();
 })();
 </script>
 
