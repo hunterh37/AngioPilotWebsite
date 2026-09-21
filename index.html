@@ -57,6 +57,13 @@
     </nav>
   </header>
 
+  <!-- WORDMARK -->
+  <section class="wordmark-top">
+    <div class="wordmark-wrap">
+      <img class="wordmark-logo" src="{{ '/assets/img/angiopilot-logo.png' | relative_url }}?v={{ site.time | date: '%s' }}" alt="AngioPilot">
+    </div>
+  </section>
+
   <!-- NEXT EVENT -->
   <section class="next-event" aria-label="Next event">
     <div class="event-card">
@@ -74,32 +81,9 @@
   <!-- MAIN PANEL -->
   <section class="panel" id="top">
 
-    <div class="wordmark-wrap">
-      <img class="wordmark-logo" src="{{ '/assets/img/angiopilot-logo.png' | relative_url }}?v={{ site.time | date: '%s' }}" alt="AngioPilot">
-    </div>
 
     <p class="tagline">Scenario-Based Vascular Catheterization<br>Simulation Training Tool</p>
 
-    <div class="stops">
-      <div class="stop">
-        <span class="icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5h19v2h-19zM22.2 10.4c-.3-1.1-1.4-1.7-2.5-1.4l-5 1.3-6.5-6.1-2.2.6 3.9 6.8-4.7 1.3-1.9-1.5-1.6.4 2.2 3.8 17.6-4.7c1.1-.3 1.7-1.4 1.4-2.5z"/></svg>
-        </span>
-        <span class="stop-text">
-          <span class="stop-label">Departure</span>
-          <span class="stop-value">Femoral Artery</span>
-        </span>
-      </div>
-      <div class="stop">
-        <span class="icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5h19v2h-19zM21.7 13.3c-.3 1.1-1.4 1.7-2.5 1.4L2.3 10.2l-.6-5.3 1.7.4 1.4 2.2 4.7 1.2L8.3 1l2.2.6 3.7 8.2 5 1.3c1.1.3 1.8 1.4 1.5 2.2z"/></svg>
-        </span>
-        <span class="stop-text">
-          <span class="stop-label">Arrival</span>
-          <span class="stop-value">Splenic Artery</span>
-        </span>
-      </div>
-    </div>
 
     <a class="btn" id="demo" href="https://calendly.com" target="_blank" rel="noopener">Book Demo</a>
 

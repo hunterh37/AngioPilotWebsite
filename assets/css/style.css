@@ -693,3 +693,11 @@ html.splash-lock body {
 .lightbox-close:hover { background: var(--sky); }
 
 html.lightbox-lock { overflow: hidden; }
+
+/* ---------- TOP WORDMARK ---------- */
+
+.wordmark-top {
+  padding: 18px 22px 0;
+}
+
+.wordmark-top .wordmark-wrap { margin-top: 0; }
