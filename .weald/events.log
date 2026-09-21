@@ -1,0 +1,12 @@
+{"actor":"Chief of Staff","message":"chief-of-staff read 10 items on general\/technology from Hacker News and learned 6 of 6.","project":"VascCathWebsite","ts":"2026-09-19T22:40:33Z","type":"research"}
+{"actor":"Leo","message":"leo: the model returned nothing usable","project":"VascCathWebsite","ts":"2026-09-19T22:52:14Z","type":"research"}
+{"actor":"Leo","message":"leo: the model returned nothing usable","project":"VascCathWebsite","ts":"2026-09-19T23:07:23Z","type":"research"}
+{"actor":"MaBoy","message":"new-agent-5: distillation failed: Model HTTP 400: license_key is required and must be a string","project":"VascCathWebsite","ts":"2026-09-19T23:22:15Z","type":"research"}
+{"actor":"Mechanic","message":"mechanic: no model or credential for a research pass","project":"VascCathWebsite","ts":"2026-09-19T23:37:03Z","type":"research"}
+{"actor":"Mechanic","message":"mechanic: no model or credential for a research pass","project":"VascCathWebsite","ts":"2026-09-19T23:52:05Z","type":"research"}
+{"actor":"Mechanic","message":"mechanic: no model or credential for a research pass","project":"VascCathWebsite","ts":"2026-09-20T00:07:03Z","type":"research"}
+{"actor":"Mechanic","message":"mechanic: no model or credential for a research pass","project":"VascCathWebsite","ts":"2026-09-20T00:22:03Z","type":"research"}
+{"actor":"Mechanic","message":"mechanic: no model or credential for a research pass","project":"VascCathWebsite","ts":"2026-09-20T00:37:03Z","type":"research"}
+{"actor":"Mechanic","message":"mechanic: no model or credential for a research pass","project":"VascCathWebsite","ts":"2026-09-20T00:52:08Z","type":"research"}
+{"actor":"Mechanic","message":"mechanic: no model or credential for a research pass","project":"VascCathWebsite","ts":"2026-09-20T01:07:03Z","type":"research"}
+{"actor":"Mechanic","message":"mechanic: no model or credential for a research pass","project":"VascCathWebsite","ts":"2026-09-20T01:22:03Z","type":"research"}
