@@ -198,9 +198,12 @@
     <p class="section-body">Two boarding days only &mdash; Tuesday, September 22nd and Wednesday, September 23rd, 2026. Pick a time below.</p>
 
     <div class="calendly-wrap">
-      <!-- data-url is set by the script at the bottom of the page, which picks
-           the boarding day based on the current time in Boston. -->
-      <div class="calendly-inline-widget" id="calendly-embed"></div>
+      <!-- data-auto-load="false" stops widget.js from initializing this element
+           itself: with no data-url it throws before defining window.Calendly,
+           and the widget never appears. The script at the bottom of the page
+           initializes it with a URL that picks the boarding day from the
+           current time in Boston. -->
+      <div class="calendly-inline-widget" id="calendly-embed" data-auto-load="false"></div>
     </div>
 
     <noscript>
