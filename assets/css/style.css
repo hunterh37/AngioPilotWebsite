@@ -710,13 +710,13 @@ html.splash-lock body {
   box-shadow: inset 0 0 24px rgba(0, 0, 0, .55);
 }
 
-/* ---------- view inside the window ---------- */
+/* ---------- view inside the window: a blood vessel ---------- */
 
 .pane-view {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(70% 46% at 50% 52%, #a8348f 0%, #7e2a5c 26%, #772127 58%, #5e1a1c 100%);
+    radial-gradient(58% 50% at 50% 48%, #8e1b29 0%, #6a1122 30%, #450a1a 64%, #22040d 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -730,9 +730,58 @@ html.splash-lock body {
   pointer-events: none;
 }
 
+.vessel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* faint rings expanding from the centre: moving forward through the vessel */
+.vessel::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: repeating-radial-gradient(circle at 50% 48%, rgba(255,150,160,.14) 0 2px, rgba(255,150,160,0) 2px 46px);
+  animation: vessel-flow 4.5s linear infinite;
+  opacity: 0;
+}
+
+@keyframes vessel-flow {
+  0%   { transform: scale(.5);  opacity: 0; }
+  30%  { opacity: .5; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* red blood cell: a biconcave disc, darker dimple in the middle, bright rim */
+.rbc {
+  position: absolute;
+  top: var(--top);
+  left: 112%;
+  width: var(--s);
+  aspect-ratio: 1 / .82;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255,255,255,.34) 0, rgba(255,255,255,0) 26%),
+    radial-gradient(ellipse at 50% 52%, #6e0c14 0%, #921620 20%, #c22c36 42%, #ea5860 62%, #d33a43 78%, #8a121b 100%);
+  box-shadow:
+    inset 0 -5px 9px rgba(60, 0, 8, .5),
+    inset 0 2px 4px rgba(255, 170, 175, .25),
+    0 4px 12px rgba(0, 0, 0, .35);
+  opacity: var(--o, 1);
+  filter: blur(var(--b, 0px));
+  will-change: left, transform;
+  animation: rbc-drift var(--d, 6s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes rbc-drift {
+  0%   { left: 112%; transform: translateY(0) rotate(0deg); }
+  100% { left: -32%; transform: translateY(var(--bob, 0px)) rotate(var(--rot, 180deg)); }
+}
+
 .pane-mark {
   position: relative;
-  width: 74%;
+  width: 76%;
   opacity: 0;
   transform: scale(.94);
   transition: opacity 700ms ease 260ms, transform 900ms cubic-bezier(.2,.9,.25,1) 260ms;
@@ -740,51 +789,11 @@ html.splash-lock body {
 
 .splash.is-open .pane-mark { opacity: 1; transform: scale(1); }
 
-.pane-word {
+.pane-logo {
   display: block;
-  font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-  font-size: clamp(22px, 7.2vw, 46px);
-  line-height: 1;
-  letter-spacing: -.035em;
-  color: var(--white);
-  text-align: center;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, .35);
-}
-
-.pane-word .lower { text-transform: lowercase; }
-
-.pane-jet {
-  position: absolute;
-  bottom: 74%;
-  left: 60%;
-  width: 26%;
-  fill: var(--white);
-}
-
-.pane-trail {
-  position: absolute;
-  bottom: 88%;
-  left: 2%;
-  width: 66%;
-  fill: none;
-}
-
-.pane-trail path {
-  stroke: var(--white);
-  stroke-width: 6;
-  stroke-linecap: round;
-  stroke-dasharray: 720;
-  stroke-dashoffset: 720;
-}
-
-.splash.is-open .pane-trail path {
-  animation: trail-draw 900ms ease-out 420ms forwards;
-}
-
-@keyframes trail-draw {
-  to { stroke-dashoffset: 0; }
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, .5));
 }
 
 /* ---------- the shade ---------- */

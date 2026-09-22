@@ -24,12 +24,22 @@
       <div class="porthole-pane">
 
         <div class="pane-view">
+          <!-- Inside a blood vessel: red blood cells drift past at three depths
+               (small + blurred = far, large + sharp = near). Each cell's size,
+               lane, speed, spin and depth are set with custom properties. -->
+          <div class="vessel" aria-hidden="true">
+            <span class="rbc" style="--s:7%;  --top:16%; --d:8.5s; --delay:-1.2s; --rot:170deg;  --bob:-10px; --o:.45; --b:1.3px"></span>
+            <span class="rbc" style="--s:6%;  --top:62%; --d:9.5s; --delay:-5s;   --rot:-130deg; --bob:8px;   --o:.4;  --b:1.5px"></span>
+            <span class="rbc" style="--s:8%;  --top:38%; --d:9s;   --delay:-3.3s; --rot:210deg;  --bob:-6px;  --o:.45; --b:1.2px"></span>
+            <span class="rbc" style="--s:13%; --top:24%; --d:6.4s; --delay:-2.6s; --rot:120deg;  --bob:12px;  --o:.8;  --b:.5px"></span>
+            <span class="rbc" style="--s:12%; --top:70%; --d:7s;   --delay:-0.8s; --rot:-150deg; --bob:-9px;  --o:.8;  --b:.5px"></span>
+            <span class="rbc" style="--s:14%; --top:48%; --d:6.6s; --delay:-4.4s; --rot:95deg;   --bob:14px;  --o:.85; --b:.4px"></span>
+            <span class="rbc" style="--s:23%; --top:4%;  --d:5s;   --delay:-1.9s; --rot:-75deg;  --bob:18px;  --o:1;   --b:0px"></span>
+            <span class="rbc" style="--s:25%; --top:76%; --d:4.6s; --delay:-3.1s; --rot:65deg;   --bob:-16px; --o:1;   --b:0px"></span>
+            <span class="rbc" style="--s:20%; --top:42%; --d:5.4s; --delay:-0.3s; --rot:115deg;  --bob:8px;   --o:1;   --b:0px"></span>
+          </div>
           <div class="pane-mark">
-            <svg class="pane-trail" viewBox="0 0 700 60"><path d="M8 50 C 180 46, 400 30, 690 8"/></svg>
-            <svg class="pane-jet" viewBox="0 0 120 120">
-              <path d="M112 44 L74 36 L44 8 L34 8 L48 40 L24 40 L14 26 L6 26 L12 48 L6 70 L14 70 L24 56 L48 56 L34 88 L44 88 L74 60 L112 52 C118 51 118 45 112 44 Z"/>
-            </svg>
-            <span class="pane-word">A<span class="lower">ngio</span>P<span class="lower">ilot</span></span>
+            <img class="pane-logo" src="{{ '/assets/img/angiopilot-logo-white.png' | relative_url }}?v={{ site.time | date: '%s' }}" alt="" fetchpriority="high">
           </div>
         </div>
 
