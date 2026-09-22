@@ -127,9 +127,9 @@
     <p class="section-body">Two boarding days only &mdash; Tuesday, September 22nd and Wednesday, September 23rd, 2026. Pick a time below.</p>
 
     <div class="calendly-wrap">
-      <div class="calendly-inline-widget"
-           data-url="https://calendly.com/jason-medvr/30min?month=2026-09&amp;date=2026-09-22&amp;hide_gdpr_banner=1"
-           data-auto-load="true"></div>
+      <!-- data-url is set by the script at the bottom of the page, which picks
+           the boarding day based on the current time in Boston. -->
+      <div class="calendly-inline-widget" id="calendly-embed"></div>
     </div>
 
     <noscript>
@@ -242,6 +242,60 @@
 
 <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+(function () {
+  var BASE = 'https://calendly.com/jason-medvr/30min';
+  var TUE = '2026-09-22';
+  var WED = '2026-09-23';
+
+  // The event runs on Eastern time, so the handover has to key off Boston's
+  // clock rather than the visitor's -- someone on the west coast at 8PM is
+  // already looking at a Wednesday in Boston.
+  var EVENT_TZ = 'America/New_York';
+  var SWITCH_TO_WED = TUE + 'T23:00';  // 11PM Tuesday, once Tue slots are moot
+  var EVENT_OVER    = WED + 'T23:59';
+
+  // "2026-09-22T20:35" for the current wall clock in EVENT_TZ.
+  function nowAtEvent() {
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: EVENT_TZ, hour12: false,
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit'
+      }).formatToParts(new Date()).reduce(function (acc, p) {
+        acc[p.type] = p.value;
+        return acc;
+      }, {});
+      // hourCycle h23 vs h24: midnight comes back as "24" in some engines.
+      var hour = parts.hour === '24' ? '00' : parts.hour;
+      return parts.year + '-' + parts.month + '-' + parts.day + 'T' + hour + ':' + parts.minute;
+    } catch (e) {
+      return null;  // no Intl time zone support; fall back to Tuesday
+    }
+  }
+
+  function bookingUrl() {
+    var now = nowAtEvent();
+    var url = BASE + '?hide_gdpr_banner=1';
+    if (now && now > EVENT_OVER) return url;        // past the event: next available
+    var date = (now && now >= SWITCH_TO_WED) ? WED : TUE;
+    return url + '&month=' + date.slice(0, 7) + '&date=' + date;
+  }
+
+  var el = document.getElementById('calendly-embed');
+  if (!el) return;
+  var url = bookingUrl();
+
+  // widget.js is async, so it may not have landed yet.
+  (function boot() {
+    if (window.Calendly && window.Calendly.initInlineWidget) {
+      window.Calendly.initInlineWidget({ url: url, parentElement: el });
+    } else {
+      setTimeout(boot, 50);
+    }
+  })();
+})();
+</script>
 
 </body>
 </html>
