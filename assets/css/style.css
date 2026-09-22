@@ -252,6 +252,23 @@ body {
   color: var(--navy);
 }
 
+/* ---------- KEY FEATURE ILLUSTRATION ---------- */
+
+.key-feature {
+  margin: 0;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 18px 18px 8px;
+}
+
+.key-feature img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin: 0 auto;
+}
+
 /* ---------- SUB TITLE ---------- */
 
 .sub-title {
