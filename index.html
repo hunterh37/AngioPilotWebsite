@@ -50,8 +50,7 @@
   <header class="bar top">
     <nav class="nav" aria-label="Section navigation">
       <a href="#overview">Overview</a>
-      <a href="#screenshots">Screenshots</a>
-      <a href="#video">Video</a>
+      <a href="#watch">Watch Demo</a>
       <a href="https://calendly.com" target="_blank" rel="noopener">Book Demo</a>
       <a href="#contact">Contact Us</a>
     </nav>
@@ -62,6 +61,12 @@
     <div class="wordmark-wrap">
       <img class="wordmark-logo" src="{{ '/assets/img/angiopilot-logo.png' | relative_url }}?v={{ site.time | date: '%s' }}" alt="AngioPilot">
     </div>
+  </section>
+
+  <!-- TAGLINE -->
+  <section class="panel hero" id="top">
+    <p class="tagline">Scenario-Based Vascular Catheterization<br>Simulation Training Tool</p>
+    <p class="tagline-desc">Practice the full procedure and clinical decisions, and get scored based on our performance in virtual space.</p>
   </section>
 
   <!-- NEXT EVENT -->
@@ -78,52 +83,118 @@
     </div>
   </section>
 
-  <!-- MAIN PANEL -->
-  <section class="panel" id="top">
-
-
-    <p class="tagline">Scenario-Based Vascular Catheterization<br>Simulation Training Tool</p>
-
-
+  <!-- BOOK DEMO -->
+  <section class="panel hero-cta">
     <a class="btn" id="demo" href="https://calendly.com" target="_blank" rel="noopener">Book Demo</a>
-
   </section>
 
   <!-- OVERVIEW -->
   <section class="panel section" id="overview">
     <h2 class="section-title">Overview</h2>
-    <p class="section-body">AngioPilot is a scenario-based simulation trainer for vascular catheterization, built for Apple Vision Pro. Practitioners fly a guidewire and catheter from the femoral access point to a target vessel, rehearsing route selection, device handling, and contrast timing before they ever reach the table.</p>
-    <div class="facts">
-      <div class="fact"><span class="fact-label">Modality</span><span class="fact-value">Apple Vision Pro</span></div>
-      <div class="fact"><span class="fact-label">Scenarios</span><span class="fact-value">Guided &amp; Free Flight</span></div>
-      <div class="fact"><span class="fact-label">Assessment</span><span class="fact-value">Scored Runs</span></div>
+    <p class="section-body">Angiopilot is a scenario-based vascular catheterization simulator designed to familiarize trainees with real-world procedures. AngioPilot combines responsive X-ray visualization with intuitive catheter manipulation and step-by-step guidance, enabling safe, accessible, and repeatable skills training.</p>
+
+    <h3 class="sub-title">Why splenic embolization needs a new kind of practice</h3>
+    <div class="ps">
+      <div class="ps-row">
+        <div class="ps-cell ps-problem">
+          <span class="ps-title">A demanding procedure</span>
+          <span class="ps-text">Precise wire and catheter handling while reading live imaging.</span>
+        </div>
+        <div class="ps-cell ps-solution">
+          <span class="ps-title">Step-by-step precision training</span>
+          <span class="ps-text">A streamlined procedural workflow, with curricula that adapt to the trainee.</span>
+        </div>
+      </div>
+      <div class="ps-row">
+        <div class="ps-cell ps-problem">
+          <span class="ps-title">Little time on a simulator</span>
+          <span class="ps-text">Few hands-on chances, and schedules too full for regular lab sessions.</span>
+        </div>
+        <div class="ps-cell ps-solution">
+          <span class="ps-title">Gamified, self-directed runs</span>
+          <span class="ps-text">Checkpoints, real-time angiogram feedback and a scored debrief, wherever the headset is.</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Our scope</h3>
+    <p class="scope-lead">Our goal is integration into real-world medical education.</p>
+    <div class="scope">
+      <div class="scope-card">
+        <span class="scope-title">Learning objectives</span>
+        <ul class="scope-bullets">
+          <li>Precise control of the catheter and guidewire</li>
+          <li>Reading real-time imaging to identify landmarks, confirm catheter position and select the correct vessel</li>
+          <li>Efficient runs with minimal X-ray exposure and contrast use</li>
+        </ul>
+      </div>
+      <div class="scope-modes">
+        <div class="scope-card">
+          <span class="scope-title"><span class="scope-when">Now</span>Beginner mode</span>
+          <ul class="scope-bullets">
+            <li>Step-by-step guided narration</li>
+            <li>Highlighted targets and actions</li>
+            <li>Immediate feedback</li>
+            <li>Progression gated by correct actions</li>
+          </ul>
+        </div>
+        <div class="scope-card is-next">
+          <span class="scope-title"><span class="scope-when">Next</span>Advanced mode</span>
+          <ul class="scope-bullets">
+            <li>Reduced guidance</li>
+            <li>Independent decision-making</li>
+            <li>Errors allowed with a structured debrief</li>
+            <li>Performance-based assessment</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- SCREENSHOTS -->
-  <section class="panel section" id="screenshots">
-    <h2 class="section-title">Screenshots</h2>
-    <p class="section-body">Captures from the training environment.</p>
-    <div class="shots">
-      <figure class="shot"><img src="assets/img/screenshots/01-portal-take-flight.webp" alt="AngioPilot entry portal with Take Flight prompt" width="1600" height="900" loading="lazy" decoding="async"></figure>
-      <figure class="shot"><img src="assets/img/screenshots/02-scenario-select.webp" alt="Navigation boarding pass scenario selection" width="1600" height="900" loading="lazy" decoding="async"></figure>
-      <figure class="shot"><img src="assets/img/screenshots/03-patient-briefing.webp" alt="Splenic trauma embolization patient briefing" width="1600" height="900" loading="lazy" decoding="async"></figure>
-      <figure class="shot"><img src="assets/img/screenshots/04-procedure-setup.webp" alt="Procedure setup step in the angiography suite" width="1600" height="900" loading="lazy" decoding="async"></figure>
-      <figure class="shot"><img src="assets/img/screenshots/05-fluoroscopy-view.webp" alt="Live fluoroscopy view during catheter navigation" width="1600" height="900" loading="lazy" decoding="async"></figure>
+  <!-- WATCH DEMO -->
+  <section class="panel section" id="watch">
+    <h2 class="section-title">Watch Demo</h2>
+    <p class="section-body">Six checkpoints from takeoff to debrief.</p>
+    <div class="steps">
+      <figure class="step">
+        <span class="step-num" aria-hidden="true"><span class="step-badge">1</span></span>
+        <div class="shot"><img src="assets/img/screenshots/01-portal-take-flight.webp" alt="AngioPilot entry portal with Take Flight prompt" width="1600" height="900" loading="lazy" decoding="async"></div>
+        <figcaption class="step-caption"><span class="sr-only">Step 1: </span>Takeoff</figcaption>
+      </figure>
+      <figure class="step">
+        <span class="step-num" aria-hidden="true"><span class="step-badge">2</span></span>
+        <div class="shot"><img src="assets/img/screenshots/02-scenario-select.webp" alt="Navigation boarding pass scenario selection" width="1600" height="900" loading="lazy" decoding="async"></div>
+        <figcaption class="step-caption"><span class="sr-only">Step 2: </span>Pick a Scenario</figcaption>
+      </figure>
+      <figure class="step">
+        <span class="step-num" aria-hidden="true"><span class="step-badge">3</span></span>
+        <div class="shot"><img src="assets/img/screenshots/03-patient-briefing.webp" alt="Splenic trauma embolization patient briefing" width="1600" height="900" loading="lazy" decoding="async"></div>
+        <figcaption class="step-caption"><span class="sr-only">Step 3: </span>Patient Briefing</figcaption>
+      </figure>
+      <figure class="step">
+        <span class="step-num" aria-hidden="true"><span class="step-badge">4</span></span>
+        <div class="shot"><img src="assets/img/screenshots/04-procedure-setup.webp" alt="Guided procedure setup step in the angiography suite" width="1600" height="900" loading="lazy" decoding="async"></div>
+        <figcaption class="step-caption"><span class="sr-only">Step 4: </span>Guided Steps</figcaption>
+      </figure>
+      <figure class="step">
+        <span class="step-num" aria-hidden="true"><span class="step-badge">5</span></span>
+        <div class="shot"><img src="assets/img/screenshots/05-vessel-navigation.webp" alt="Guidewire and catheter navigating toward the target vessel under live X-ray" width="1600" height="959" loading="lazy" decoding="async"></div>
+        <figcaption class="step-caption"><span class="sr-only">Step 5: </span>Vessel Navigation</figcaption>
+      </figure>
+      <figure class="step">
+        <span class="step-num" aria-hidden="true"><span class="step-badge">6</span></span>
+        <div class="shot"><img src="assets/img/screenshots/06-debrief.webp" alt="Debrief report with total score, contrast usage and vessel selection review" width="1600" height="984" loading="lazy" decoding="async"></div>
+        <figcaption class="step-caption"><span class="sr-only">Step 6: </span>Performance Assessment</figcaption>
+      </figure>
     </div>
-  </section>
-
-  <!-- VIDEO -->
-  <section class="panel section" id="video">
-    <h2 class="section-title">Video</h2>
-    <p class="section-body">Walkthrough of a complete run, departure to arrival.</p>
-    <div class="video"><iframe src="https://www.youtube.com/embed/osTspEApYeU" title="VascCath walkthrough" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe></div>
+    <h3 class="sub-title">Video walkthrough</h3>
+    <div class="video"><iframe src="https://www.youtube.com/embed/osTspEApYeU" title="AngioPilot full run walkthrough" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe></div>
   </section>
 
   <!-- CONTACT -->
   <section class="panel section" id="contact">
     <h2 class="section-title">Contact Us</h2>
-    <p class="section-body">Questions, pilot programs, or institutional inquiries. Send details and the team will follow up.</p>
+    <p class="section-body">For questions, research collaborations, please share your details below. Our team will be pleased to follow up with you.</p>
     <a class="btn" id="contact-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScgS-rVTuVnw7OZeLu_PhA4svPCimomt7Hye-itGPkrac6kdQ/viewform" target="_blank" rel="noopener">Contact Us</a>
   </section>
 

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "angiopilot-preview",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["/private/tmp/claude-501/-Users-jeah-Desktop-AVP-2025-AngioPilotWebsite/85e315a7-2aa0-40d5-9959-a04df9d5225d/scratchpad/preview/serve.js", "/Users/jeah/Desktop/AVP 2025/AngioPilotWebsite", "4001"],
+      "port": 4001
+    }
+  ]
+}
